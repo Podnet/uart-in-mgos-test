@@ -4,6 +4,9 @@ int uart_no = 1;
 
 static void check_uart(void *arg)
 {
+    if(mgos_uart_is_rx_enabled(uart_no)) {
+        LOG(LL_INFO, ("RX is enabled on UART interface %d",uart_no));
+    }
     int bytes_avail = mgos_uart_read_avail(uart_no);
     char buf[100];
     if (bytes_avail > 0)
@@ -32,6 +35,8 @@ enum mgos_app_init_result mgos_app_init(void)
     {
         LOG(LL_ERROR, ("Failed to configure UART%d", uart_no));
     }
+
+    mgos_uart_set_rx_enabled(uart_no, true);
 
     // mgos_uart_set_dispatcher(uart_no, uart_msg_recv, NULL);
     mgos_set_timer(1000, MGOS_TIMER_REPEAT, check_uart, NULL);
