@@ -1,7 +1,4 @@
-# A blank Mongoose OS app
+# UART In MGOS test app
 
 ## Overview
-
-This is an empty app, serves as a skeleton for building Mongoose OS
-apps from scratch.
-
+A mongoose OS test app to process incoming data from UART interface.
