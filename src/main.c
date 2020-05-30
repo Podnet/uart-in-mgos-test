@@ -2,7 +2,29 @@
 
 int uart_no = 1;
 
-static void check_uart(void *arg)
+
+
+
+
+/*! \mainpage UART in doc
+ *
+ * \section Documentation
+ *
+ * Add some intro to docs:
+ *
+ * \section install_sec Steps to install:
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
+
+
+
+
+/**> Function to check UART connection. */ 
+void check_uart(void *arg)
 {
     if(mgos_uart_is_rx_enabled(uart_no)) {
         LOG(LL_INFO, ("RX is enabled on UART interface %d",uart_no));
@@ -20,6 +42,7 @@ static void check_uart(void *arg)
     (void)arg;
 }
 
+/**> MongooseOS initialization function to setup UART. */
 enum mgos_app_init_result mgos_app_init(void)
 {
     LOG(LL_INFO, ("Preparing UART interface"));
