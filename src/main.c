@@ -10,13 +10,7 @@ int uart_no = 1;
  *
  * \section Documentation
  *
- * Add some intro to docs:
- *
- * \section install_sec Steps to install:
- *
- * \subsection step1 Step 1: Opening the box
- *
- * etc...
+ * This a test app receieve data over UART port for ESP32.
  */
 
 
